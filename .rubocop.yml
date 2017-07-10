@@ -1,0 +1,13 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - configure
+
+Style/Documentation:
+  Include:
+    - lib/**/*
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

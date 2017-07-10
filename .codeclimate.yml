@@ -1,0 +1,25 @@
+engines:
+  brakeman:
+    enabled: false
+  bundler-audit:
+    enabled: true
+  coffeelint:
+    enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - ruby
+  eslint:
+    enabled: false
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+    - "apps/**"
+    - "lib/**"
+exclude_paths:
+  - "db/"
+  - "public/"

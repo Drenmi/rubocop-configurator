@@ -1,0 +1,14 @@
+language: ruby
+services:
+  - postgresql
+addons:
+  code_climate:
+    repo_token: <%= ENV['CODE_CLIMATE_TOKEN'] %>
+cache: bundler
+script:
+  - bundle exec rake test
+  - bundle exec rubocop
+before_script:
+  - bundle exec hanami db prepare HANAMI_ENV=test
+after_success:
+  - bundle exec codeclimate-test-reporter
