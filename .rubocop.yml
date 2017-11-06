@@ -1,13 +1,29 @@
 AllCops:
   TargetRubyVersion: 2.4
 
+# Avoid false positives for DSL blocks.
 Metrics/BlockLength:
   ExcludedMethods:
     - configure
+    - describe
 
+# Most long lines in tests are example descriptions. Breaking these
+# up generally makes the tests harder to read.
+Metrics/LineLength:
+  Exclude:
+    - spec/**/*
+
+# Hanami uses a mixed style for class and module children which can't
+# be checked with existing configuration options.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Adding documentation for domain entities is generally helpful.
 Style/Documentation:
   Include:
-    - lib/**/*
+    - lib/entities/**/*
 
+# I use my privilige as project lead to (subjectively) decide to use
+# double quotes.
 Style/StringLiterals:
   EnforcedStyle: double_quotes
