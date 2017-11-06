@@ -21,7 +21,7 @@ Style/ClassAndModuleChildren:
 # Adding documentation for domain entities is generally helpful.
 Style/Documentation:
   Include:
-    - lib/entities/**/*
+    - lib/rubocop_configurator/entities/**/*
 
 # I use my privilige as project lead to (subjectively) decide to use
 # double quotes.

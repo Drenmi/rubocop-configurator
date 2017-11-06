@@ -11,6 +11,8 @@ gem "hanami-model", "~> 1.0"
 
 gem "pg"
 
+gem "octokit"
+
 group :development do
   gem "rubocop"
   gem "shotgun"
