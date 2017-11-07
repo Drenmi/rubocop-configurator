@@ -1,9 +1,6 @@
 language: ruby
 services:
   - postgresql
-addons:
-  code_climate:
-    repo_token: <%= ENV['CODE_CLIMATE_TOKEN'] %>
 cache: bundler
 script:
   - bundle exec rake test
