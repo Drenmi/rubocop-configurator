@@ -4,8 +4,8 @@ require_relative "../../spec_helper"
 
 describe RubocopRelease do
   it "can be initialized with attributes" do
-    book = RubocopRelease.new(name: "0.51.0")
+    book = RubocopRelease.new(tag_name: "v0.51.0")
 
-    book.name.must_equal "0.51.0"
+    book.tag_name.must_equal "v0.51.0"
   end
 end
