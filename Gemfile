@@ -25,6 +25,7 @@ end
 group :test do
   gem "capybara"
   gem "minitest"
+  gem "simplecov"
 end
 
 group :production do
