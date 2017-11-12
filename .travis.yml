@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=61bcb1766ff62d0115adb25ef438807121dce7dfd0511472522d60672bc24d26
 language: ruby
 services:
   - postgresql
@@ -6,6 +9,9 @@ script:
   - bundle exec rake test
   - bundle exec rubocop
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - bundle exec hanami db prepare HANAMI_ENV=test
-after_success:
-  - bundle exec codeclimate-test-reporter
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
